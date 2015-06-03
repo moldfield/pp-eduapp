@@ -7,6 +7,18 @@ DB Table Strucure
 
 Users
 
-| ID | user_login | user_pass | user_nicename | user_email | user_url |user_registered | user activation_key | user_status | display_name |
-|-|-|-|-|-|-|-|-|-|-|
-|1||||||||||
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>user_login</th>
+		<th>user_pass</th>
+		<th>user_nicename</th>
+		<th>user_email</th>
+		<th>user_url</th>
+		<th>user_registered</th>
+		<th>user activation_key</th>
+		<th>user_status</th>
+		<th>display_name</th>
+	</tr>
+</table>

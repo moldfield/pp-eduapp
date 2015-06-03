@@ -24,5 +24,14 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */ 
+add_action('admin_menu', 'pp_plugin');
+
+function pp_plugin_activation () {
+	add_role( 'custom_role', 'Teacher', array( 'read' => true, 'level_0' => true ) );
+
+	add_menu_page( 'Test Plugin Page', 'Test Plugin', 'manage_options', 'test-plugin', 'test_init' );
+	
+}
+register_activation_hook( __FILE__, 'pp_plugin_activation' );
 
 ?>

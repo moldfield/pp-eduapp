@@ -8,3 +8,5 @@ DB Table Strucure
 Users
 
 | ID | user_login | user_pass | user_nicename | user_email | user_url |user_registered | user activation_key | user_status | display_name |
+|-|-|-|-|-|-|-|-|-|-|
+|1||||||||||

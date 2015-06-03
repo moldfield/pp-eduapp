@@ -74,6 +74,54 @@ There are 24 usermeta rows by default. Only relevant rows are included here. Mos
 		<td>0 = kindergarden<br>
 				12 = senior...
 	</tr>
+	<tr>
+		<td>28</td>
+		<td>user ID</td>
+		<td>p1_subject</td>
+		<td>eg: english</td>				
+	</tr>
+	<tr>
+		<td>29</td>
+		<td>user ID</td>
+		<td>p2_subject</td>
+		<td>eg: english</td>				
+	</tr>
+	<tr>
+		<td>30</td>
+		<td>user ID</td>
+		<td>p3_subject</td>
+		<td>eg: english</td>				
+	</tr>
+	<tr>
+		<td>31</td>
+		<td>user ID</td>
+		<td>p1_subject</td>
+		<td>eg: english</td>				
+	</tr>
+	<tr>
+		<td>32</td>
+		<td>user ID</td>
+		<td>p4_subject</td>
+		<td>eg: english</td>				
+	</tr>
+	<tr>
+		<td>33</td>
+		<td>user ID</td>
+		<td>p5_subject</td>
+		<td>eg: english</td>				
+	</tr>
+	<tr>
+		<td>34</td>
+		<td>user ID</td>
+		<td>p6_subject</td>
+		<td>eg: english</td>				
+	</tr>
+	<tr>
+		<td>35</td>
+		<td>user ID</td>
+		<td>p7_subject</td>
+		<td>eg: english</td>				
+	</tr>
 
 </table>
 
@@ -116,4 +164,11 @@ Can use ```entry_author_id``` to find out what ```user_type``` is entering the d
 	</tr>
 </table>
 
-<h4>Possibly add instant messaging functionality.</h4>
+<h2>Future Ideas</h2>
+<ul>
+	<li>Instant messaging</li>
+	<li>Student useful resources page like citation help, specific khan academy lessons based on subject.</li>
+	<li>Graphs of student performance and behavior ratings using http://d3js.org/</li>
+	<li></li>
+	<li></li>
+</ul>

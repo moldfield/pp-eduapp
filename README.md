@@ -24,7 +24,7 @@ One row per user.
 </table>
 
 <h4>pp_usermeta</h4>
-There are 24 usermeta rows by default. Only relevant rows are included here. Most important here is user_type.
+There are 24 usermeta rows by default. Only relevant rows are included here. Most important here is user_type. Any date about the user can be kept here relating to the user.
 <table>
 	<tr>
 		<th>umeta_id</th>
@@ -58,18 +58,26 @@ There are 24 usermeta rows by default. Only relevant rows are included here. Mos
 	</tr>
 	<tr>
 		<td>25</td>
-		<td>user_ID</td>
+		<td>user ID</td>
 		<td>user_type</td>
 		<td>0 = schooladmin<br>
 				1 = teacher<br>
 				2 = parent<br>
 				3 = student<br>
-				4 = othertype
+				4 = othertype...
 		</td>
 	</tr>
+	<tr>
+		<td>26</td>
+		<td>user ID</td>
+		<td>grade_level</td>
+		<td>0 = kindergarden<br>
+				12 = senior...
+	</tr>
+
 </table>
 
-<h4>pp_user_relationships table</h4>
+<h4>pp_user_relationships</h4>
 Custom table. Creates relationships between students, teachers and parents.
 
 <table>

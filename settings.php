@@ -1,7 +1,7 @@
 <?php
-if(!class_exists('PP_EduApp_Settings'))
+if(!class_exists('PP_Eduapp_Settings'))
 {
-	class PP_EduApp_Settings
+	class PP_Eduapp_Settings
 	{
 		/**
 		 * Construct the plugin object
@@ -19,33 +19,33 @@ if(!class_exists('PP_EduApp_Settings'))
         public function admin_init()
         {
         	// register your plugin's settings
-        	register_setting('PP_EduApp-group', 'setting_a');
-        	register_setting('PP_EduApp-group', 'setting_b');
+        	register_setting('PP_Eduapp-group', 'setting_a');
+        	register_setting('PP_Eduapp-group', 'setting_b');
         	// add your settings section
         	add_settings_section(
-        	    'PP_EduApp-section', 
+        	    'PP_Eduapp-section', 
         	    'WP Plugin Template Settings', 
-        	    array(&$this, 'settings_section_PP_EduApp'), 
+        	    array(&$this, 'settings_section_PP_Eduapp'), 
         	    'PP_EduApp'
         	);
         	
         	// add your setting's fields
             add_settings_field(
-                'PP_EduApp-setting_a', 
+                'PP_Eduapp-setting_a', 
                 'Setting A', 
                 array(&$this, 'settings_field_input_text'), 
-                'PP_EduApp', 
-                'PP_EduApp-section',
+                'PP_Eduapp', 
+                'PP_Eduapp-section',
                 array(
                     'field' => 'setting_a'
                 )
             );
             add_settings_field(
-                'PP_EduApp-setting_b', 
+                'PP_Eduapp-setting_b', 
                 'Setting B', 
                 array(&$this, 'settings_field_input_text'), 
-                'PP_EduApp', 
-                'PP_EduApp-section',
+                'PP_Eduapp', 
+                'PP_Eduapp-section',
                 array(
                     'field' => 'setting_b'
                 )
@@ -82,7 +82,7 @@ if(!class_exists('PP_EduApp_Settings'))
         	    'WP Plugin Template Settings', 
         	    'WP Plugin Template', 
         	    'manage_options', 
-        	    'PP_EduApp', 
+        	    'PP_Eduapp', 
         	    array(&$this, 'plugin_settings_page')
         	);
         } // END public function add_menu()

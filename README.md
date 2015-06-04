@@ -1,4 +1,4 @@
-Education App
+Part Pixel Education App
 ------
 This app regulates communication and rating from teachers and parents to students.
 

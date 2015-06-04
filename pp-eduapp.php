@@ -3,7 +3,7 @@
 Plugin Name: Part Pixel Eduapp
 Plugin URI: http://fyaconiello.github.com/wp-plugin-template
 Description: A plugin for teachers, students and parents
-Version: 1.0
+Version: 0.0.1
 Author: Part Pixel
 Author URI: http://www.partpixelstudio.com
 License: GPL2
@@ -24,56 +24,26 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */ 
-add_action('admin_menu', 'pp_plugin_activation');
 
+// Make sure we don't expose any info if called directly
+if ( !function_exists( 'add_action' ) ) {
+	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
+	exit;
+}
+// Define some useful constants
+define( 'PP_EDUAPP_VERSION', '0.0.1' );
+define( 'PP_EDUAPP__MINIMUM_WP_VERSION', '3.2' );
+define( 'PP_EDUAPP__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'PP_EDUAPP__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
+register_activation_hook( __FILE__, array( 'PP_Eduapp', 'plugin_activation' ) );
+register_deactivation_hook( __FILE__, array( 'PP_Eduapp', 'plugin_deactivation' ) );
 
-if(!class_exists('PP_EduApp'))
-{
-	class PP_EduApp
-	{
-		/**
-		 * Construct the plugin object
-		 */
-		public function __construct()
-		{
-			// Initialize Settings
-			require_once(sprintf("%s/settings.php", dirname(__FILE__)));
-			$PP_EduApp_Settings = new PP_EduApp_Settings();
-			// Register custom post types
-			require_once(sprintf("%s/post-types/post_type_template.php", dirname(__FILE__)));
-			$Post_Type_Template = new Post_Type_Template();
-			$plugin = plugin_basename(__FILE__);
-			add_filter("plugin_action_links_$plugin", array( $this, 'plugin_settings_link' ));
-		} // END public function __construct
-		/**
-		 * Activate the plugin
-		 */
-		public static function activate()
-		{
-			// Do nothing
-		} // END public static function activate
-		/**
-		 * Deactivate the plugin
-		 */
-		public static function deactivate()
-		{
-			// Do nothing
-		} // END public static function deactivate
-		// Add the settings link to the plugins page
-		function plugin_settings_link($links)
-		{
-			$settings_link = '<a href="options-general.php?page=PP_EduApp">Settings</a>';
-			array_unshift($links, $settings_link);
-			return $links;
-		}
-	} // END class PP_EduApp
-} // END if(!class_exists('PP_EduApp'))
-if(class_exists('PP_EduApp'))
-{
-	// Installation and uninstallation hooks
-	register_activation_hook(__FILE__, array('PP_EduApp', 'activate'));
-	register_deactivation_hook(__FILE__, array('PP_EduApp', 'deactivate'));
-	// instantiate the plugin class
-	$PP_EduApp = new PP_EduApp();
+require_once( PP_EDUAPP__PLUGIN_DIR . 'settings.php' );
+require_once( PP_EDUAPP__PLUGIN_DIR . 'class.pp-eduapp.php' );
+require_once( PP_EDUAPP__PLUGIN_DIR . 'class.pp-eduapp-admin.php' );
+
+if ( is_admin() ) {
+	require_once( PP_EDUAPP__PLUGIN_DIR . 'class.pp-eduapp-admin.php' );
+	add_action( 'init', array( 'PP_Eduapp_Admin', 'init' ) );
 }
